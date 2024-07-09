@@ -1,0 +1,33 @@
+{
+        "dependencies": {
+                "@types/pdfkit": "^0.13.4",
+                "argparse": "^2.0.1",
+                "patch-package": "^8.0.0",
+                "pdfkit": "^0.13.0",
+                "protobufjs": "^6.11.2",
+                "terminal-kit": "^3.1.1",
+                "uuid": "^10.0.0"
+        },
+        "name": "issuu-better-pdf-downloader",
+        "description": ".",
+        "version": "1.0.5",
+        "main": "issuu.js",
+        "scripts": {
+                "postinstall": "patch-package",
+                "start": "node issuu"
+        },
+        "repository": {
+                "type": "git",
+                "url": "git+https://github.com/llui85/issuu-better-pdf-downloader.git"
+        },
+        "type": "module",
+        "author": "llui85",
+        "license": "MIT",
+        "bugs": {
+                "url": "https://github.com/llui85/issuu-better-pdf-downloader/issues"
+        },
+        "homepage": "https://github.com/llui85/issuu-better-pdf-downloader",
+        "devDependencies": {
+                "p-limit": "^6.1.0"
+        }
+}

@@ -1,0 +1,63 @@
+syntax = "proto3";
+package layers;
+
+message Image {
+  bytes resource = 1;
+  uint32 width = 2;
+  uint32 height = 3;
+}
+
+message Font {
+  bytes resource = 1;
+  uint32 weight = 2;
+}
+
+message TextLayer {
+  string text = 1;
+  uint32 font = 2;
+  float size = 3;
+  uint32 color = 4;
+  repeated float matrix = 5;
+  repeated float originx = 6;
+  repeated float originy = 7;
+  repeated float scale = 8;
+}
+
+message LineLayer {
+  uint32 color = 1;
+  uint32 blend = 2;
+  repeated float coord = 3;
+}
+
+message RectLayer {
+  uint32 color = 1;
+  uint32 blend = 2;
+  repeated float box = 3; // x, y, width, height
+}
+
+message ImageLayer {
+  uint32 image = 1;
+  uint32 width = 2;
+  uint32 height = 3;
+}
+
+message Layer {
+  ImageLayer image = 1;
+  TextLayer text = 2;
+  RectLayer rect = 3;
+  LineLayer line = 4;
+}
+
+message Page {
+  uint32 query = 1;
+  uint32 version = 2;
+  string build = 3;
+  uint32 width = 4;
+  uint32 height = 5;
+  bool usable = 6;
+  float rmse = 7;
+  string fallback = 8;
+  repeated Layer layer = 9;
+  repeated Font font = 10;
+  repeated Image image = 11;
+}

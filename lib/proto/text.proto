@@ -1,0 +1,21 @@
+syntax = "proto3";
+package text;
+
+message TextBlock {
+  string text = 1;
+  float height = 2;
+  repeated float matrix = 3;
+  repeated uint32 charOffset = 4;
+}
+
+message Page {
+  uint32 pageNumber = 1;
+  uint32 width = 2;
+  uint32 height = 3;
+  repeated TextBlock textBlock = 4;
+}
+
+message Document {
+  repeated Page page = 1;
+  string build = 2;
+}

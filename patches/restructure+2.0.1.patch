@@ -1,0 +1,13 @@
+diff --git a/node_modules/restructure/src/utils.js b/node_modules/restructure/src/utils.js
+index 86adce6..829e0d7 100644
+--- a/node_modules/restructure/src/utils.js
++++ b/node_modules/restructure/src/utils.js
+@@ -16,7 +16,7 @@ exports.resolveLength = function(length, stream, parent) {
+   }
+ 
+   if (isNaN(res)) {
+-    throw new Error('Not a fixed size');
++    return 0; // temporary fix for https://github.com/foliojs/pdfkit/issues/1359
+   }
+ 
+   return res;
